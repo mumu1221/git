@@ -18,17 +18,17 @@ ptr findpre(int x,list l);
 void deletelist(list l);
 
 struct node {
-    int x;
+    int ele;
     ptr next;
 };
 int main(){
     ptr l=creat(5);
     ptr a=find(20,l);
-    int b=a->x;
+    int b=a->ele;
     printf("%d",b);
 }
 ptr find(int x,list l){
-    while(l->x!=x && l!=NULL){
+    while(l->ele!=x && l!=NULL){
         l=l->next;
     }
     return l;
@@ -38,7 +38,7 @@ ptr find(int x,list l){
 
 void insert(int x,list l,ptr p){
     ptr tmp = (ptr)malloc(sizeof(struct node));
-    tmp->x=x;
+    tmp->ele=x;
     tmp->next=p->next;
     p->next=tmp;
 }
@@ -62,7 +62,7 @@ ptr creat(int m){
     l->next=p;
     int i =0;
     while(i<m){
-        scanf("%d",&p->x);
+        scanf("%d",&p->ele);
         p->next=(ptr)malloc(sizeof(struct node));
         p=p->next;
         p->next=NULL;
