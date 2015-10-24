@@ -9,12 +9,12 @@
 typedef struct node *ptr;
 typedef ptr list;
 ptr find(int x,list l);
-ptr creat(int m);
-void insert(int x,list l,ptr p);
-void delete(int x,list l);
-void isempty(list l);
-void islast(ptr p);
-ptr findpre(int x,list l);
+ptr creat(int m);//creat a linklist include m element;
+void insert(int x,list l,ptr p);//insert an element after p in the list l;
+void delete(int x,list l);//delete the element x in the list l;
+int isempty(list l);//if the list is empty,return 1,else return 0; 
+int islast(ptr p);//if the ptr is last return 1,else return 0;
+ptr findpre(int x,list l);//return the element before the x element; 
 void deletelist(list l);
 
 struct node {
@@ -24,8 +24,8 @@ struct node {
 int main(){
     ptr l=creat(5);
     ptr a=find(20,l);
-    int b=a->ele;
-    printf("%d",b);
+    long b=(long)a->next;
+    printf("%ld",b);
 }
 ptr find(int x,list l){
     while(l->ele!=x && l!=NULL){
@@ -44,7 +44,7 @@ void insert(int x,list l,ptr p){
 }
 
 ptr findpre(int x,list l){
-    while(l->next!=NULL && l->next->x!=x){
+    while(l->next!=NULL && l->next->ele!=x){
         l=l->next;
     }
 }
