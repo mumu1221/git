@@ -24,7 +24,7 @@ struct node {
 int main(){
     ptr l=creat(5);
     ptr a=find(20,l);
-    long b=(long)a->next;
+    long b=(long)a;
     printf("%ld",b);
     insert(20,l,a);
 }
