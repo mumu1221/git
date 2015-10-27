@@ -23,10 +23,11 @@ struct node {
 };
 int main(){
     ptr l=creat(5);
-    ptr a=find(20,l);
-    long b=(long)a;
+    ptr a=findpre(20,l);
+    insert(50,l,a);
+    delete( 50, l);
+    long b=(long)a->next->ele;
     printf("%ld",b);
-    insert(20,l,a);
 }
 ptr find(int x,list l){
     while(l->ele!=x && l!=NULL){
@@ -48,6 +49,7 @@ ptr findpre(int x,list l){
     while(l->next!=NULL && l->next->ele!=x){
         l=l->next;
     }
+    return l;
 }
 
 void delete(int x,list l){
