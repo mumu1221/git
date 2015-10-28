@@ -1,21 +1,21 @@
 /*************************************************
 	> File Name: 1.c
-	> Author: 
-	> Mail: 
+	> Author:
+	> Mail:
 	> Created Time: 2015年08月24日 星期一 10时23分45秒
  ************************************************************************/
 #include<stdlib.h>
 #include<stdio.h>
 typedef struct node *ptr;
 typedef ptr list;
-typedef elementtype int;
+typedef  int elementtype;
 ptr find(elementtype x,list l);
 ptr creat(elementtype m);//creat a linklist include m element;
 void insert(elementtype x,list l,ptr p);//insert an element after p in the list l;
 void delete(elementtype x,list l);//delete the element x in the list l;
-elementtype isempty(list l);//if the list is empty,return 1,else return 0; 
+elementtype isempty(list l);//if the list is empty,return 1,else return 0;
 elementtype islast(ptr p);//if the ptr is last return 1,else return 0;
-ptr findpre(elementtype x,list l);//return the element before the x element; 
+ptr findpre(elementtype x,list l);//return the element before the x element;
 void deletelist(list l);
 
 struct node {
